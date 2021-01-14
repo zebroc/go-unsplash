@@ -15,15 +15,15 @@ type PhotoResult struct {
 
 // Photo represents a photo object
 type Photo struct {
-	ID             string            `json:"id"`
-	CreatedAt      string            `json:"created_at"`
-	UpdatedAt      string            `json:"updated_at"`
-	Width          int               `json:"width"`
-	Height         int               `json:"height"`
-	Description    string            `json:"description"`
-	AltDescription string            `json:"alt_description"`
-	Urls           map[string]string `json:"urls"`
-	User           User              `json:"user"`
+	ID             string `json:"id"`
+	CreatedAt      string `json:"created_at"`
+	UpdatedAt      string `json:"updated_at"`
+	Width          int    `json:"width"`
+	Height         int    `json:"height"`
+	Description    string `json:"description"`
+	AltDescription string `json:"alt_description"`
+	Urls           Urls   `json:"urls"`
+	User           User   `json:"user"`
 }
 
 type PhotosCollection struct {
@@ -72,8 +72,8 @@ func (col *UsersCollection) Search(params interface{}) ([]User, *http.Response, 
 
 // CollectionResult represents the response of a collection search
 type CollectionResult struct {
-	Total      int    `json:"total"`
-	TotalPages int    `json:"total_pages"`
+	Total      int          `json:"total"`
+	TotalPages int          `json:"total_pages"`
 	Results    []Collection `json:"results"`
 }
 
@@ -130,4 +130,12 @@ type Stats struct {
 	Developers         int `json:"developers"`
 	Applications       int `json:"applications"`
 	Requests           int `json:"requests"`
+}
+
+type Urls struct {
+	Raw     string `json:"raw"`
+	Full    string `json:"full"`
+	Regular string `json:"regular"`
+	Small   string `json:"small"`
+	Thumb   string `json:"thumb"`
 }
