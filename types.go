@@ -48,13 +48,17 @@ type UserResult struct {
 
 // User represents a user object
 type User struct {
-	ID           string            `json:"id"`
-	CreatedAt    string            `json:"created_at"`
-	UpdatedAt    string            `json:"updated_at"`
-	Username     string            `json:"username"`
-	Name         string            `json:"name"`
-	Links        map[string]string `json:"links"`
-	ProfileImage map[string]string `json:"profile_image"`
+	ID                string            `json:"id"`
+	CreatedAt         string            `json:"created_at"`
+	UpdatedAt         string            `json:"updated_at"`
+	Username          string            `json:"username"`
+	Name              string            `json:"name"`
+	Location          string            `json:"location"`
+	PortfolioURL      string            `json:"portfolio_url"`
+	Bio               string            `json:"bio"`
+	InstagramUsername string            `json:"instagram_username"`
+	Links             Links             `json:"links"`
+	ProfileImage      map[string]string `json:"profile_image"`
 }
 
 type UsersCollection struct {
@@ -138,4 +142,14 @@ type Urls struct {
 	Regular string `json:"regular"`
 	Small   string `json:"small"`
 	Thumb   string `json:"thumb"`
+}
+
+type Links struct {
+	Self      string `json:"self"`
+	Html      string `json:"html"`
+	Photos    string `json:"photos"`
+	Likes     string `json:"likes"`
+	Portfolio string `json:"portfolio"`
+	Following string `json:"following"`
+	Followers string `json:"followers"`
 }
