@@ -23,6 +23,7 @@ type Photo struct {
 	Description    string `json:"description"`
 	AltDescription string `json:"alt_description"`
 	Urls           Urls   `json:"urls"`
+	Links          Links  `json:"links"`
 	User           User   `json:"user"`
 }
 
